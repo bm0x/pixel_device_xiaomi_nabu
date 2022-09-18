@@ -32,9 +32,8 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
 ifeq ($(NABU_KERNEL),true)
 BOARD_BOOT_HEADER_VERSION := 3
-KERNEL_LD := LD=ld.lld
+#KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
-TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu-kernel
 TARGET_KERNEL_CONFIG := nabu_user_defconfig
 else ($(NABU_KERNEL_PREBUILT),true)

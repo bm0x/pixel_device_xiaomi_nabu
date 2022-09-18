@@ -49,7 +49,7 @@ ifeq ($(NABU_KERNEL),true)
 BOARD_BOOT_HEADER_VERSION := 3
 #KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
-TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu-kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu
 TARGET_KERNEL_CONFIG := nabu_user_defconfig
 endif
 

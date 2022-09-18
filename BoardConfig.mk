@@ -9,8 +9,9 @@ include device/xiaomi/sm8150-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/nabu
 
-NABU_KERNEL := false
 NABU_KERNEL_PREBUILT := true
+NABU_KERNEL := false
+COMMON_KERNEL := false
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -53,7 +54,9 @@ BOARD_BOOT_HEADER_VERSION := 3
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu-kernel
 TARGET_KERNEL_CONFIG := nabu_user_defconfig
-else
+endif
+
+ifeq ($(COMMON_KERNEL),true)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150-legacy
 TARGET_KERNEL_CONFIG += vendor/xiaomi/nabu.config
 endif

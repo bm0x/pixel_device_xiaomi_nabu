@@ -48,12 +48,14 @@ endif
 ifeq ($(NABU_KERNEL),true)
 BOARD_BOOT_HEADER_VERSION := 3
 #KERNEL_LD := LD=ld.lld
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu
 TARGET_KERNEL_CONFIG := nabu_user_defconfig
 endif
 
 ifeq ($(COMMON_KERNEL),true)
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150-legacy
 TARGET_KERNEL_CONFIG += vendor/xiaomi/nabu.config
 endif
